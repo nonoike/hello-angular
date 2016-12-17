@@ -10,6 +10,11 @@ import { Hero } from './hero';
 export class AppComponent {
   title = 'Tour of Heroes';
   heroes = HEROES;
+  selectedHero: Hero;
+
+  onSelect(hero: Hero): void {
+    this.selectedHero = hero;
+  }
 }
 
 const HEROES: Hero[] = [
