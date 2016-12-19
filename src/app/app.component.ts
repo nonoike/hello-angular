@@ -1,29 +1,13 @@
 import { Component } from '@angular/core';
-import { Hero } from './hero';
-import { HeroService } from './hero.Service';
-
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+    selector: 'app-root',
+    template: `
+    <h1>{{title}}</h1>
+    <a routerLink="/heroes">Heroes</a>
+    <router-outlet></router-outlet>
+    `
 })
 
 export class AppComponent {
-  title = 'Tour of Heroes';
-  heroes: Hero[];
-  selectedHero: Hero;
-
-  constructor(private heroService: HeroService) { }
-
-  onSelect(hero: Hero): void {
-    this.selectedHero = hero;
-  }
-
-  ngOnInit() {
-    this.getHeroes();
-  }
-
-  getHeroes(): void {
-    this.heroService.getHeroesSlowly().then(heores => this.heroes = heores);
-  }
+    title = 'Tour of Heroes';
 }
