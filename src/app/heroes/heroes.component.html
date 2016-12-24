@@ -8,7 +8,9 @@
 
 <div *ngIf="selectedHero">
   <h2>
-    {{selectedHero.name | uppercase}} is my Hero
+    <!-- {{selectedHero.name | uppercase}} is my Hero -->
+    {{selectedHero.name}} is my Hero
   </h2>
   <button (click)="gotoDetail()">View Details</button>
 </div>
+<!-- <app-hero-detail [hero]="selectedHero"><app-hero-detail> -->
